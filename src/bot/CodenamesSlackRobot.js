@@ -20,9 +20,8 @@ const CMD_SHOW = 'show';
 // player management
 const CMD_JOIN_LOBBY = 'join';
 const CMD_LEAVE_LOBBY = 'leave';
-// const CMD_SET_TEAM = 'set-team'; // nah, let's just use CMD_JOIN_LOBBY instead
 const CMD_BECOME_SPYMASTER = 'become-spymaster';
-const CMD_SHUFFLE_TEAMS = 'shuffle';
+const CMD_SHUFFLE_TEAMS = 'shuffle-teams';
 const CMD_POPULATE = 'populate-lobby';
 
 // channel commands
@@ -99,8 +98,6 @@ export default class CodenamesHubot extends SlackBot {
         .setHelp(`use this command to join the game or switch teams. You must specify the team you want to join.`);
     this.addCommand(this.leaveGame, CMD_LEAVE_LOBBY);
     this.addCommand(this.becomeSpymaster, CMD_BECOME_SPYMASTER);
-    this.addCommand(this.shufflePlayers, CMD_SHUFFLE_TEAMS)
-        .changesTeams();
     this.addCommand(this.shufflePlayers, CMD_SHUFFLE_TEAMS)
         .changesTeams();
 
