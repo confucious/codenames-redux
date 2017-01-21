@@ -46,12 +46,8 @@ export default class SlackBot extends Bot {
 
   addSlackRobotListener() {
     this.robot.listen(SLACK_RESPOND_REGEX, this.listener);
-    this.robot.listen('cn', this.listener);
-    this.robot.listen('cn :words(.+)', this.listener);
-    this.robot.listen('Cn', this.listener);
-    this.robot.listen('Cn :words(.+)', this.listener);
-    this.robot.listen('CN', this.listener);
-    this.robot.listen('CN :words(.+)', this.listener);
+    this.robot.listen('[cC][nN]', this.listener);
+    this.robot.listen('[cC][nN] :words(.+)', this.listener);
   }
 
   // where the magic happens
